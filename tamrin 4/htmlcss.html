@@ -1,0 +1,400 @@
+<!-- <script>
+   function getArrayDepth(value) {
+return Array.isArray(value) ? 1 + Math.max(...value.map(getArrayDepth)) : 0;
+}
+console.log(getArrayDepth([1,2,3,4,5,[3,4],[1]]));
+</script> -->
+
+<script>
+   const wordBankDemo = ["array"];
+   const wordlist = [
+  "abruptly",
+  "absurd",
+  "abyss",
+  "affix",
+  "askew",
+  "avenue",
+  "awkward",
+  "axiom",
+  "azure",
+  "bagpipes",
+  "bandwagon",
+  "banjo",
+  "bayou",
+  "beekeeper",
+  "blitz",
+  "blizzard",
+  "boggle",
+  "bookworm",
+  "boxcar",
+  "boxful",
+  "buckaroo",
+  "buffalo",
+  "buffoon",
+  "buxom",
+  "buzzard",
+  "buzzing",
+  "buzzwords",
+  "caliph",
+  "cobweb",
+  "cockiness",
+  "croquet",
+  "crypt",
+  "curacao",
+  "cycle",
+  "daiquiri",
+  "dirndl",
+  "disavow",
+  "dizzying",
+  "duplex",
+  "dwarves",
+  "embezzle",
+  "equip",
+  "espionage",
+  "euouae",
+  "exodus",
+  "faking",
+  "fishhook",
+  "fixable",
+  "fjord",
+  "flapjack",
+  "flopping",
+  "fluffiness",
+  "flyby",
+  "foxglove",
+  "frazzled",
+  "frizzled",
+  "fuchsia",
+  "funny",
+  "gabby",
+  "galaxy",
+  "galvanize",
+  "gazebo",
+  "giaour",
+  "gizmo",
+  "glowworm",
+  "glyph",
+  "gnarly",
+  "gnostic",
+  "gossip",
+  "grogginess",
+  "haiku",
+  "haphazard",
+  "hyphen",
+  "iatrogenic",
+  "icebox",
+  "injury",
+  "ivory",
+  "ivy",
+  "jackpot",
+  "jaundice",
+  "jawbreaker",
+  "jaywalk",
+  "jazziest",
+  "jazzy",
+  "jelly",
+  "jigsaw",
+  "jinx",
+  "jiujitsu",
+  "jockey",
+  "jogging",
+  "joking",
+  "jovial",
+  "joyful",
+  "juicy",
+  "jukebox",
+  "jumbo",
+  "kayak",
+  "kazoo",
+  "keyhole",
+  "khaki",
+  "kilobyte",
+  "kiosk",
+  "kitsch",
+  "kiwifruit",
+  "klutz",
+  "knapsack",
+  "larynx",
+  "lengths",
+  "lucky",
+  "luxury",
+  "lymph",
+  "marquis",
+  "matrix",
+  "megahertz",
+  "microwave",
+  "mnemonic",
+  "mystify",
+  "naphtha",
+  "nightclub",
+  "nowadays",
+  "numbskull",
+  "nymph",
+  "onyx",
+  "ovary",
+  "oxidize",
+  "oxygen",
+  "pajama",
+  "peekaboo",
+  "phlegm",
+  "pixel",
+  "pizazz",
+  "pneumonia",
+  "polka",
+  "pshaw",
+  "psyche",
+  "puppy",
+  "puzzling",
+  "quartz",
+  "queue",
+  "quips",
+  "quixotic",
+  "quiz",
+  "quizzes",
+  "quorum",
+  "razzmatazz",
+  "rhubarb",
+  "rhythm",
+  "rickshaw",
+  "schnapps",
+  "scratch",
+  "shiv",
+  "snazzy",
+  "sphinx",
+  "spritz",
+  "squawk",
+  "staff",
+  "strength",
+  "strengths",
+  "stretch",
+  "stronghold",
+  "stymied",
+  "subway",
+  "swivel",
+  "syndrome",
+  "thriftless",
+  "thumbscrew",
+  "topaz",
+  "transcript",
+  "transgress",
+  "transplant",
+  "triphthong",
+  "twelfth",
+  "twelfths",
+  "unknown",
+  "unworthy",
+  "unzip",
+  "uptown",
+  "vaporize",
+  "vixen",
+  "vodka",
+  "voodoo",
+  "vortex",
+  "voyeurism",
+  "walkway",
+  "waltz",
+  "wave",
+  "wavy",
+  "waxy",
+  "wellspring",
+  "wheezy",
+  "whiskey",
+  "whizzing",
+  "whomever",
+  "wimpy",
+  "witchcraft",
+  "wizard",
+  "woozy",
+  "wristwatch",
+  "wyvern",
+  "xylophone",
+  "yachtsman",
+  "yippee",
+  "yoked",
+  "youthful",
+  "yummy",
+  "zephyr",
+  "zigzag",
+  "zigzagging",
+  "zilch",
+  "zipper",
+  "zodiac",
+  "zombie",
+];
+function hangman() {
+  // let hangmanPics = [" +---+\n  |     |\n  |\n  |\n  |\n  |\n=========","  +---+\n  |       | \n  |      0\n  |\n  |\n  |\n ========= ","  +---+\n  |      |\n  |     0\n  |     +\n  |\n  |\n=========","  +---+\n  |      |\n  |     0\n  |    -+\n  | \n  |\n=========","  +---+\n  |      |\n  |     0\n  |    -+-\n  |      |\n  |\n=========","  +---+\n  |      |\n  |     0\n  |    -+-\n  |      |\n  |     /\n=========","  +---+\n  |       |\n  |      0\n  |     -+-\n  |       |\n  |      / \\  \n========="];
+  let hangmanPics = [
+  ` 
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+  =========`,
+  `
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+  =========`,
+  `
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+  =========`,
+  `
+    +---+
+    |   |
+    O   |
+    |\\  |
+        |
+        |
+  =========`,
+  `
+    +---+
+    |   |
+    O   |
+   /|\\  |
+        |
+        |
+  =========`,
+  `
+    +---+
+    |   |
+    O   |
+   /|\\  |
+     \\  |
+        |
+  =========`,
+  `
+    +---+
+    |   |
+    O   |
+   /|\\  |
+   / \\  |
+        |
+  =========`,
+   ];
+   let randomWordStr = ""
+   let randomWordArr = [];
+  let randomWordStr = "";
+  let whichGame;
+  let gallow = hangmanPics[0];
+  let reveal = [];
+  let wrongGuesses = [];
+  let losingPoints = 0;
+  let totalGuesses = [];
+  let gameOver = false;
+  let score = 100;
+  let warGamesText = "\n\n\n Do you want to play a game?\n\n           Type yes or no. \n\n\n\n";
+  let badInput = "\n\n\n I don't understand your input. \n\n\n\n     Click 'OK' and try again.\n\n\n ";
+  let aiGreeting = "Awesome! My name is H.A.L. I have drawn the gallows.";
+  let aiRandomWord = "I have picked a random word.";
+  let noScreen = "\n\n\n ok, maybe some other time\n\n\n";
+  let revealDisplay = '';
+
+  function diffChoice() {
+   randomWordStr = wordBank[Math.floor(Math.random() * wordBank.length)];
+    randomWordArr = randomWordStr.split('');
+    randomWordArr.forEach(function(el) {
+      reveal.push("_")
+    });
+    revealDisplay = reveal.join(" ");
+  }
+
+  function playGame() {
+    if (totalGuesses.length === 0) {
+      userGuess = prompt(aiGreeting +"\n" + gallow + "\n" + aiRandomWord +"\n" + revealDisplay + "\n" + wrongGuesses + "\n" + "Guess a letter or go to sudden\ndeath by guessing the whole word: ");
+    } else {
+      userGuess = prompt(gallow + "\n" + "Reveal: " + revealDisplay + "\n" + "Guessed Letters: " + wrongGuesses + "\n" + "Guess a letter or go to sudden\ndeath by guessing the whole word: ");
+    }
+
+    while (userGuess === "" || userGuess.match(/[^a-zA-Z]/g)) {
+      if (userGuess.match(/[^a-zA-Z]/g)) {
+        alert("\n\n\nOnly letters will be accepted.\n\n\n\n      Click 'OK' to continue.\n\n\n")
+        userGuess = playGame();
+      } else {
+        alert(badInput);
+        userGuess = playGame();
+      }
+    }
+
+    userGuess = userGuess.toLowerCase().trim();
+    return userGuess;
+  }
+
+  function afterCorrectGuess(arr, val) {
+    const indexes = [];
+    arr.forEach(function(el, index) {
+      if (el === val) {
+        indexes.push(index);
+      }
+    });
+
+    indexes.forEach(function(el) {
+      reveal.splice(el, 1, userGuess);
+    });
+
+    revealDisplay = reveal.join(" ");
+    totalGuesses.push(userGuess);
+
+    if (reveal.indexOf('_') < 0) {
+      gameOverStatus("win");
+    }
+  }
+
+  function afterWrongGuess() {
+    wrongGuesses.push(userGuess);
+    gallow = hangmanPics[wrongGuesses.length];
+    losingPoints++;
+    totalGuesses.push(userGuess);
+
+    if (losingPoints === 6) {
+      gameOverStatus("lose")
+    }
+  }
+
+  function gameOverStatus (status) {
+    gameOver = true;
+    if (status === "win") {
+      return alert(gallow + '\nYOU WON the ' + whichGame + ' game!\n   You guessed: ' +randomWordStr +'\n   Your score is ' + (score - (wrongGuesses.length*2)));
+    } else {
+      return alert(hangmanPics[6] + '\nYOU LOST the ' + whichGame + ' game :(\n' + 'The chosen word was: ' + randomWordStr + '.');
+    }
+  }
+
+  while (gameOver === false) {
+    let userGuess = "";
+    userGuess = playGame();
+
+    // User has already guessed input
+    while (totalGuesses.includes(userGuess)) {
+      alert ("\n\n\n     You already guessed that you FOOL!\nHere are the letters you've guessed so far: " + totalGuesses.sort()+"\n\n\n\n                    Click 'OK' to continue\n\n\n ");
+      userGuess = playGame();
+    }
+
+    // Quick end to game
+    if (userGuess.length > 1) {
+      (userGuess === randomWordStr) ? gameOverStatus("win") : gameOverStatus("lose");
+    }
+
+    // If user guess is in word
+    if (randomWordArr.includes(userGuess)) {
+      afterCorrectGuess(randomWordArr, userGuess);
+    }
+    // If user guess is NOT in word
+    else {
+      afterWrongGuess();
+    }
+  }
+  hangman();
+}
+
+hangman()
+</script>

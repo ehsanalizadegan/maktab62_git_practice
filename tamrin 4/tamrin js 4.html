@@ -1,0 +1,27 @@
+<script>
+  
+  function flataray(arr) {
+
+let flatArray = [];
+
+for (let i = 0; i < arr.length; i++) {
+
+    if (arr[i] instanceof Array) {
+
+        const Result = flataray(arr[i]);
+        for (var j = 0; j < Result.length; j++) {
+            flatArray.push(Result[j]);
+            // console.log(flatArray)
+        }
+    } else {
+
+        flatArray.push(arr[i]);
+    }
+}
+return flatArray;
+}
+
+let ary = [1, 2, 3, [4, 5], [[[5]]]]
+
+console.log(flataray(ary));
+</script>

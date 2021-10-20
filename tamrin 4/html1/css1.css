@@ -1,0 +1,10 @@
+.backgroundcolor{
+   background-color: rgb(0, 238, 255);
+}
+.img{
+   width: 300px;
+   float: right;
+}
+.div{
+   text-align: left;
+}

@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans";
+}
+
+.blue {
+  color: white;
+  background-color:  rgb(60,138,288);
+}
+
+.pink {
+  color: white;
+  background-color:rgb(231,93,127);
+}
+
+.orange {
+  color: white;
+  background-color: rgb(231,187,93);
+}
+
+.lightGreen {
+  color: white;
+  background-color: rgb(93,231,190);
+}
+
+header {
+  background-color: #00aeff;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+}
+
+main .container {
+  padding: 15px 25px;
+  text-align: center;
+}
+
+main .card {
+  background-color: #7a7a7a;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  display: inline-block;
+  width: 300px;
+  height: max-content;
+  margin: 0 79px;
+}
+
+footer {
+  padding: 15px 25px;
+  text-align: center;
+}
+
+footer .color-box {
+  width: 250px;
+  height: 100px;
+  display: inline-block;
+  padding: 25px;
+  margin: 0 17px;
+  text-align: center;
+}
+
+footer .color-box h3 {
+  margin-top: 40px;
+}

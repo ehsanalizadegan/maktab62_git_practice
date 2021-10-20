@@ -1,0 +1,7 @@
+<script>
+  function deeparray (value) {
+    return Array.isArray(value) ? 1 + Math.max(...value.map(deeparray)) : 0
+    
+  }
+  console.log(deeparray([[[[1]]]]))
+</script>

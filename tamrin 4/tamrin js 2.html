@@ -1,0 +1,16 @@
+<script>
+  
+  function reverse(str) {
+    let reversed = "";
+    for (var me = str.length - 1; me >= 0; me--) {
+      reversed += str[me];
+    }
+    if(reversed === str){
+      return true
+    }
+      
+    return false ;
+  }
+let str = "ala"
+console.log(reverse(str))
+</script>
