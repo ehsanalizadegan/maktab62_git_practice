@@ -1,0 +1,154 @@
+<script>
+   function repeatStringNumTimes(string, times) {
+      let repeatedString = "";
+      while (times > 0) {
+         repeatedString += string;
+         times--;
+      }
+       return [...repeatedString] ;
+   }
+   console.log(repeatStringNumTimes("_", 300))
+
+
+   let car1 = a
+   let car1 = b
+   let car1 = c
+
+   function guessingNum () {
+      let x = []
+      while (  < 3) {
+         let y = Math.floor(Math.random() * 10 + 1);
+
+         console.log(y)
+      }   
+   }
+   guessingNum()
+
+   function replace () {
+      let guessingNum=car1
+      let guessingNum=car2
+      let guessingNum=car3
+      console.log(repeatStringNumTimes.replace()) 
+
+   
+
+   let personData = [
+      {
+         uid: 1,
+         firstName: "Ali",
+         lastName: "Mahdavi"
+      },
+      {
+         uid: 2,
+         firstName: "Reza",
+         lastName: "Shahmardan"
+      },
+      {
+         uid: 3,
+         firstName: "Hassan",
+         lastName: "Qolami"
+      },
+      {
+         uid: 4,
+         firstName: "Morteza",
+         lastName: "Hamedani"
+      },
+      {
+         uid: 5,
+         firstName: "Sina",
+         lastName: "Hejazi"
+      },
+      {
+         uid: 6,
+         firstName: "Hadi",
+         lastName: "Sadri"
+      }
+   ]
+
+   let additionalPersonData = [
+      {
+         uid: 3,
+         position: "UI Designer",
+         city: "Biarjmand"
+      },
+      {
+         uid: 1,
+         position: "Back-End Develope",
+         city: "Taleqan"
+      },
+      {
+         uid: 2,
+         position: "Front-End Developer",
+         city: "Behbahan"
+      },
+      {
+         uid: 4,
+         position: "Devops",
+         city: "Shiraz"
+      },
+      {
+         uid: 6,
+         position: "Server Admin",
+         city: "Tehran"
+      },
+      {
+         uid: 5,
+         position: "Product Manager",
+         city: "Hamedan"
+      }
+   ]
+
+   Array.prototype.create =  function create (object) {
+      if (object.uid !== personData.uid)
+      console.log("you donot creat object with same uid")
+      this.push(object)
+      console.log(this)
+   }
+
+   console.log(personData.create({
+           uid: 7,
+           firstName: "Hadi",
+           lastName: "Sadri" 
+       }))
+
+
+   Array.prototype.read = function () {
+      this.forEach(function (name) {
+         console.log(name)
+
+      })
+
+   }
+
+   Array.prototype.update = function (name, updatedName) {
+      if (name === null || name === '') {
+         return;
+      } else {
+         var updatedNames = [];
+         for (var i = 0; i < this.length; i++) {
+            if (this[i] === name) {
+               updatedNames[i] = updatedName;
+               console.log('Position ' + i + 'was updated to ' + updatedName);
+            } else {
+               updatedNames.push(this[i]);
+            }
+         } return updatedNames;
+      }
+   };
+
+   Array.prototype.delet = function (name) {
+      var updatedNames = [];
+      for (var i = 0; i < this.length; i++) {
+         if (this[i] === name) {
+            continue;
+         }
+         else {
+            updatedNames.push(this[i]);
+         }
+      }
+      return updatedNames;
+
+   }
+   console.log(names.delet());
+
+</script>

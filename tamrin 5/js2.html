@@ -1,0 +1,47 @@
+<script>
+let personData = [
+   {
+      uid: 1,
+      firstName: "Ali",
+      lastName: "Mahdavi"
+   },
+
+   {
+      uid: 2,
+      firstName: "Ali",
+      lastName: "Mahdavi"
+   }
+]
+
+let additionalPersonData = [
+   {
+      uid: 1,
+      position: "Back-End Developer",
+      city: "Taleqan"
+   },
+
+   {
+      uid: 2,
+      position: "Back-End Developer",
+      city: "tabriz"
+   }
+]
+   let result = []
+for (const key in personData) {
+   let single = {}
+   for (const ele in additionalPersonData) {
+      if (personData[key].uid === additionalPersonData[ele].uid) {
+         single.uid = personData[key].uid
+         single.firstName = personData[key].firstName
+         single.lastName = personData[key].lastName
+         single.position = additionalPersonData[ele].position
+         single.city = additionalPersonData[ele].city
+
+         result.push(single)
+      }
+
+   }
+
+}
+console.log(result)
+</script>

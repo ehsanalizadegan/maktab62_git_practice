@@ -1,0 +1,30 @@
+.white{ 
+   position: relative;
+}
+.black{
+   border-style:solid ;
+   border-width: 5px;
+   border-color: rgb(122, 122, 122);
+   height: 500px;
+   width: 400px;
+   background-color: black;
+   position: absolute;
+   float: right;
+}
+.yellow{
+   height: 250px;
+   width: 250px;
+   background-color: yellow;
+   position: absolute;  
+   left: 155px;
+   top: 255px; 
+}
+.red{
+   height: 70px;
+   width: 70px;
+   background-color: red;
+   display: inline-block;
+   position: absolute;
+   left: 335px;
+   top: 278px; 
+}
